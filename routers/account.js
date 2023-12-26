@@ -49,7 +49,7 @@ router.post('/register',
   
 })
 // đăng nhập
-router.post('/login', async (req, res, next) => {
+router.post('/loginlougin', async (req, res, next) => {
     var Username = req.body.username
     var Password = req.body.password
 
