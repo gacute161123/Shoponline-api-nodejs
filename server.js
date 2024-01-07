@@ -1,27 +1,38 @@
 const express = require('express');
 var app = express();
-var bodyParser = require('body-parser')
-const AccountModel = require('./models/account')
-const DanhmucModel = require('./models/danhmuc')
-const SanphamModel= require('./models/sanpham')
+const path = require('path');
+var bodyParser = require('body-parser');
+const { dbconnect } = require('./app/configs/dbConfig');
+const ejs = require('ejs')
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/app/views');
+
+
+dbconnect();
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-var accountRouter= require('./routers/account')
+var accountRouter= require('./app/routes/accountRoute')
 app.use('/api/account/', accountRouter)
 
-var danhmuctRouter= require('./routers/danhmuc')
+var danhmuctRouter= require('./app/routes/danhmucRoute')
 app.use('/api/danhmuc/', danhmuctRouter)
 
-var sanphamRouter= require('./routers/sanpham')
+var sanphamRouter= require('./app/routes/sanphamRoute');
 app.use('/api/sanpham/', sanphamRouter)
 
+var uploadRoute = require('./app/routes/uploadRoute');
+app.use('/api/upload/',uploadRoute)
+
+
+app.use('/', express.static(path.join('./app/public')))
+app.use('/api/account/',express.static(path.join('./app/public')))
 
 app.get('/', (req, res, next) => {
-    res.json('HOME') 
+    //  res.sendFile(path.join(__dirname, '/app/views/sanpham.html'))
+    res.render('index')
 })
-
 
 app.listen(3000, () => {
     console.log(`Server started on port`);
