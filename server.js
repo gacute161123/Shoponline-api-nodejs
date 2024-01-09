@@ -27,7 +27,10 @@ app.use('/api/upload/',uploadRoute)
 
 
 app.use('/', express.static(path.join('./app/public')))
-app.use('/api/account/',express.static(path.join('./app/public')))
+app.use('/api/danhmuc/',express.static(path.join('./app/public')))
+app.use('/api/account/', express.static(path.join('./app/public')))
+app.use('/api/sanpham/', express.static(path.join('./app/public')))
+
 
 app.get('/', (req, res, next) => {
     //  res.sendFile(path.join(__dirname, '/app/views/sanpham.html'))

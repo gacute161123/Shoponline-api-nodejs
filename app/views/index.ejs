@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <%-include('layouts/header.ejs');-%>
-    <body>
-        <!-- Navigation-->
+  <body>
+    <!-- Navigation-->
     <%- include('layouts/navbar'); -%>
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Đây là trang Home nhé</p>
-                </div>
-            </div>
-        </header>
-    <br>
-    <%- include('upload.ejs'); -%>
-    <br>
-        <!-- Section-->
-    <%- include('sanpham.ejs'); -%>
-        <!-- Footer-->
-            <%- include('layouts/footer.ejs'); -%>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+      <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">SHOP ONLINE</h1>
+          <p class="lead fw-normal text-white-50 mb-0">Đây là trang Home nhé</p>
+        </div>
+      </div>
+    </header>
+    <br />
+    <br />
+    <!-- Section-->
+    <%- include('home.ejs'); -%>
+    <!-- Footer-->
+    <%- include('layouts/footer.ejs'); -%>
+    <!-- Bootstrap core JS-->
+    <%- include('layouts/script.ejs'); -%>
+  </body>
 </html>

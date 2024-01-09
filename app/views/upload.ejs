@@ -1,4 +1,16 @@
-<form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
-    <input id="fileUpload" type="file" name="myfile" >
-    <input id="submit" type="submit" value="Upload" >
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<%-include('layouts/header.ejs');-%>
+
+    <body>
+        <!-- Navigation-->
+    <form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
+        <input id="fileUpload" type="file" name="myfile">
+        <input id="submit" type="submit" value="Upload">
+    </form>
+                    <%- include('layouts/footer.ejs'); -%>
+                        <!-- Bootstrap core JS-->
+                        <%- include('layouts/script.ejs'); -%>
+    </body>
+
+</html>

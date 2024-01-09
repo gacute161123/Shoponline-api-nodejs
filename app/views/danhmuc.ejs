@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('layouts/header.ejs');-%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+    <h1  style=" text-align: center;">Danh mục Sản phẩm</h1>
+    <% for (var i=0; i < danhmucs.length; i++) { %>
+            <div id="category-info" style="margin-left:250px">
+                <h1 id="category-name"><b><%=danhmucs[i].tendanhmuc%></b></h1>
+                <p id="category-description"><%=danhmucs[i].mota%></p>
+            </div>
+                <% } %>
+
+            <%- include('layouts/footer.ejs'); -%>
+                <!-- Bootstrap core JS-->
+                <%- include('layouts/script.ejs'); -%>
+    </body>
+
+</html>

@@ -5,7 +5,8 @@ const { check, validationResult } = require('express-validator');
 exports.getAll =  (req, res, next) => {
     DanhmucModel.find({})
         .then(data => {
-        res.json(data)
+            //  res.json(data)
+            res.render('danhmuc',{ danhmucs :data})
         })
         .catch(err => {
         res.status(500).json('Loi server')

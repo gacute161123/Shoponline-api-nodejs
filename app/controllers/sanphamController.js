@@ -1,12 +1,13 @@
 const SanphamModel = require('../models/sanphamModel');
 const { check, validationResult } = require('express-validator');
 
+
 // hiển thị tất cả sản phẩm
 exports.getAll = (req, res, next) => {
     SanphamModel.find({ }).populate('danhmuc_id')
         .then(data => {
-            res.json(data)
-           
+            // res.json(data)
+            res.render('sanpham', { sanphams: data });
         })
         .catch(err => {
         res.status(500).json('Loi server 2')
@@ -80,6 +81,7 @@ exports.createProduct =  (req, res, next) => {
     })
     .catch(err => {
         res.status(500).json('Loi server')
+        console.log(err)
     })
 }
 

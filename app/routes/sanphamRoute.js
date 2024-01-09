@@ -6,7 +6,8 @@ var sanphamcontrollers = require('../controllers/sanphamController');
 
 
 // hien thi tat ca san pham
-router.get('/',sanphamcontrollers.getAll);
+router.get('/', sanphamcontrollers.getAll);
+
 
 // tìm sản phẩm theo id
 router.get('/:id', sanphamcontrollers.findProduct);
